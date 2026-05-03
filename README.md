@@ -1,16 +1,12 @@
-# 3D Hands-On
+# Computer Graphics: A Shortcut
 
 ## Rhetorical Design
 
-### Audience
-
-Those with no prior experience in computer graphics.
-
 ### Goal
 
-Illustrate the principles of 3D surface rendering through direct manipulation
-of real geospatial data, without prerequisite knowledge of graphics APIs or
-geometric modeling.
+For those with no prior experience in computer graphics, we illustrate the
+principles of 3D surface rendering through direct manipulation of real
+geospatial data.
 
 ### Challenge
 
@@ -19,14 +15,12 @@ graphics API. The learning curve is steep: even legacy APIs like OpenGL require
 understanding buffers, pipelines, and shader programs before a single pixel is
 lit. Modern APIs are more complex still.
 
-### Key Observation
+### Strategy
 
 Triangular meshes are necessary for geometric modeling, not for rendering. The
 Phong lighting model requires only a surface normal — not a mesh. A digital
 elevation model (DEM) supplies normals directly, bypassing mesh construction
 entirely and reducing the problem to arithmetic on a height map.
-
-### Strategy
 
 We implement Phong shading from scratch in Python over a real LiDAR DEM
 (Illinois statewide survey). An interactive widget exposes the shading
@@ -50,8 +44,8 @@ $$\frac{\partial \vec{r}}{\partial y} = \left(0,\, 1,\, \frac{\partial f}{\parti
 
 The surface normal is their cross product:
 
-$$\vec{n} = \frac{\partial \vec{r}}{\partial x} \times \frac{\partial \vec{r}}{\partial y} = \left(-\frac{\partial f}{\partial x},\, -\frac{\partial f}{\partial y},\, 1\right)^\top.$$
+$$\vec{n} = \frac{\partial \vec{r}}{\partial x} \times \frac{\partial \vec{r}}{\partial y} = \left(-\frac{\partial f}{\partial x},\, -\frac{\partial f}{\partial y},\, 1\right)^\top$$
 
 **Algorithm.** Approximating the partial derivatives by central finite differences:
 
-$$\vec{n}[i,j] = \Bigl(f[i,j-1] - f[i,j+1],\; f[i+1,j] - f[i-1,j],\; 2\Bigr)^\top.$$
+$$\vec{n}[i,j] = \Bigl(f[i,j-1] - f[i,j+1],\; f[i+1,j] - f[i-1,j],\; 2\Bigr)^\top$$
