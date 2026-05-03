@@ -20,7 +20,9 @@ lit. Modern APIs are more complex still.
 Triangular meshes are necessary for geometric modeling, not for rendering. The
 Phong lighting model requires only a surface normal — not a mesh. A digital
 elevation model (DEM) supplies normals directly, bypassing mesh construction
-entirely and reducing the problem to arithmetic on a height map.
+entirely. This reduces 3D surface rendering to an image filter: iteration over
+pixels, a local stencil to approximate the surface normal from neighboring
+height values, and basic arithmetic for the lighting equation.
 
 We implement Phong shading from scratch in Python over a real LiDAR DEM
 (Illinois statewide survey). An interactive widget exposes the shading
