@@ -40,14 +40,22 @@ be approximated.
 $`\vec{r}(x, y) = (x,\, y,\, f(x, y))^\top`$.
 The tangent vectors are its partial derivatives:
 
-$$\frac{\partial \vec{r}}{\partial x} = \left(1,\, 0,\, \frac{\partial f}{\partial x}\right)^\top$$
+```math
+\frac{\partial \vec{r}}{\partial x} = \left(1,\, 0,\, \frac{\partial f}{\partial x}\right)^\top
+```
 
-$$\frac{\partial \vec{r}}{\partial y} = \left(0,\, 1,\, \frac{\partial f}{\partial y}\right)^\top$$
+```math
+\frac{\partial \vec{r}}{\partial y} = \left(0,\, 1,\, \frac{\partial f}{\partial y}\right)^\top
+```
 
 The surface normal is their cross product:
 
-$$\vec{n} = \frac{\partial \vec{r}}{\partial x} \times \frac{\partial \vec{r}}{\partial y} = \left(-\frac{\partial f}{\partial x},\, -\frac{\partial f}{\partial y},\, 1\right)^\top$$
+```math
+\vec{n} = \frac{\partial \vec{r}}{\partial x} \times \frac{\partial \vec{r}}{\partial y} = \left(-\frac{\partial f}{\partial x},\, -\frac{\partial f}{\partial y},\, 1\right)^\top
+```
 
 **Algorithm.** Approximating the partial derivatives by central finite differences:
 
-$$\vec{n}[i,j] = \Bigl(f[i,j-1] - f[i,j+1],\; f[i+1,j] - f[i-1,j],\; 2\Bigr)^\top$$
+```math
+\vec{n}[i,j] = \Bigl(f[i,j-1] - f[i,j+1],\; f[i+1,j] - f[i-1,j],\; 2\Bigr)^\top
+```
