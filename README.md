@@ -17,10 +17,9 @@ lit. Modern APIs are more complex still.
 
 ### Strategy
 
-Triangular meshes are necessary for geometric modeling, not for rendering. The
-Phong lighting model requires only a surface normal — not a mesh. A digital
-elevation model (DEM) supplies normals directly, bypassing mesh construction
-entirely. This reduces 3D surface rendering to an image filter: iteration over
+Most graphics courses build rendering on top of triangular meshes, but the
+lighting model itself requires only a surface normal. A digital elevation model
+(DEM) supplies normals directly, bypassing mesh construction entirely. This reduces 3D surface rendering to an image filter: iteration over
 pixels, a local stencil to approximate the surface normal from neighboring
 height values, and basic arithmetic for the lighting equation.
 
