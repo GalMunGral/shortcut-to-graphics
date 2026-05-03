@@ -19,9 +19,13 @@ lit. Modern APIs are more complex still.
 
 Most graphics courses build rendering on top of triangular meshes, but the
 lighting model itself requires only a surface normal. A digital elevation model
-(DEM) supplies normals directly, bypassing mesh construction entirely. This reduces 3D surface rendering to an image filter: iteration over
-pixels, a local stencil to approximate the surface normal from neighboring
-height values, and basic arithmetic for the lighting equation.
+(DEM) supplies normals directly, bypassing mesh construction entirely. As a
+single-valued height function $`f(x,y)`$, a DEM also has no backfaces — every
+surface point faces upward and is always visible from above, eliminating
+visibility and occlusion checks. This reduces 3D surface rendering to an image
+filter: iteration over pixels, a local stencil to approximate the surface
+normal from neighboring height values, and basic arithmetic for the lighting
+equation.
 
 We implement Phong shading from scratch in Python over a real LiDAR DEM
 (Illinois statewide survey). An interactive widget exposes the shading
