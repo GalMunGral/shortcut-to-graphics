@@ -2,18 +2,14 @@
 
 ## Rhetorical Design
 
-### Goal
-
-For those with no prior experience in computer graphics, we illustrate the
-principles of 3D surface rendering through direct manipulation of real
-geospatial data.
-
-### Challenge
+### Purpose
 
 Most introductions to computer graphics begin with triangular meshes and a
-graphics API. The learning curve is steep: even legacy APIs like OpenGL require
-understanding buffers, pipelines, and shader programs before a single pixel is
-lit. Modern APIs are more complex still.
+graphics API — a steep entry cost even for legacy APIs like OpenGL, and steeper
+still for modern ones. This demo is intended for those with no prior graphics
+experience who want to understand 3D surface rendering without that overhead.
+We illustrate the core principles through direct manipulation of real geospatial
+data.
 
 ### Strategy
 
